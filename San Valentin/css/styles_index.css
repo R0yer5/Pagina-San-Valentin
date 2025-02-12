@@ -1,0 +1,76 @@
+body {
+    background-color: #ffffff; /* Fondo blanco */
+    overflow: hidden; /* Evita que los corazones se desborden del contenedor */
+    margin-top: -100px; /* Margen negativo para que los corazones se vean completos */
+}
+
+.heart {
+    position: absolute;
+    width: 40px; /* Tamaño de los corazones */
+    height: 40px; /* Tamaño de los corazones */
+    background-image: url("corazon.png"); /* Reemplaza con tu imagen de corazón */
+    background-size: contain; /* Ajusta la imagen al tamaño del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    animation: lluviaDeCorazones 7s linear infinite; /* Animación de caída más lenta */
+    z-index: 1; /* Asegura que los corazones estén por encima de otros elementos */
+}
+
+@keyframes lluviaDeCorazones {
+    0% {
+        transform: translateY(-150px); /* Empiezan desde más arriba */
+        opacity: 0;
+    }
+    70% {
+        opacity: 1; /* Se hacen visibles */
+    }
+    100% {
+        transform: translateY(100vh); /* Caen hasta abajo */
+        opacity: 0;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+h1 {
+    color: #e91e63;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#si {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#no {
+    background-color: #f44336;
+    color: #fff;
+}

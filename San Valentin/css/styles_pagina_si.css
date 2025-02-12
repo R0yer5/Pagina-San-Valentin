@@ -1,0 +1,119 @@
+body {
+    background-color: #FFB6C1;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #fff;
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.contenedor-te-amo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.contenedor-te-amo p {
+    font-size: 20px;
+    color: #f08080;
+}
+
+.mensaje {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mostrar-fotos { /* Estilos para el contenedor del botón */
+    margin-bottom: 20px;
+    text-align: center; /* Centra el contenido horizontalmente */
+}
+
+.mostrar-fotos button { /* Estilos para el botón */
+    padding: 10px 20px;
+    background-color: #f08080;
+    color: #fff;
+    border: none;
+    border-radius: 0; /* Bordes rectangulares */
+    cursor: pointer;
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    width: 150px; /* Ancho del botón */
+    height: 50px; /* Alto del botón */
+}
+
+.carrusel {
+    display: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Para transiciones suaves */
+    width: 600px; /* Ancho del contenedor para mostrar 2 imágenes */
+    margin: 0 auto; /* Centrar el contenedor */
+    overflow: hidden; /* Ocultar las imágenes que se salen del contenedor */
+}
+
+.carrusel img {
+    width: 300px; /* Ancho */
+    height: 300px; /* Alto */
+    object-fit: cover; /* Ajustar la imagen al cuadrado */
+    scroll-snap-align: start;
+    margin: 0; /* Eliminar márgenes */
+}
+
+.carrusel-contenedor.animar {
+    animation: desplazamiento 10s linear infinite;
+}
+
+.carrusel-contenedor {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Para transiciones suaves */
+    width: 1200px; /* Ancho del contenedor para mostrar 4 imágenes */
+    margin: 0 auto; /* Centrar el contenedor */
+    overflow: hidden; /* Ocultar las imágenes que se salen del contenedor */
+}
+
+.carrusel::before,
+.carrusel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px; /* Ancho del desvanecimiento */
+    z-index: 1;
+    pointer-events: none; /* Evitar que el desvanecimiento interfiera con los clics */
+}
+
+.carrusel::before {
+    left: 0;
+    background: linear-gradient(to right, #FFB6C1, transparent); /* Desvanecimiento a la derecha */
+}
+
+.carrusel::after {
+    right: 0;
+    background: linear-gradient(to left, #FFB6C1, transparent); /* Desvanecimiento a la izquierda */
+}
+.texto-debajo-carrusel {
+    text-align: center; /* Centrar el texto */
+    margin-top: 20px; /* Espacio entre el carrusel y el texto */
+    font-size: 16px;
+    color: #333; /* Color de texto oscuro */
+}
